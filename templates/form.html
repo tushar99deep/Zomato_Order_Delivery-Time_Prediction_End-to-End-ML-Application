@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Data</h1>
+    <form method="POST" action="/predict3">
+        <div class="tooltip">
+            <label for="Delivery_person_Age">Delivery_person_Age:</label>
+            <input type="number" step="0.01" name="Delivery_person_Age" id="Delivery_person_Age" required>
+            <span class="tooltiptext">Enter Age of Delivery Person</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Delivery_person_Ratings">Delivery Person Ratings:</label>
+            <input type="number" step="0.01" name="Delivery_person_Ratings" id="Delivery_person_Ratings" required>
+            <span class="tooltiptext">Delivery Person Ratings</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Weather_conditions">Weather Conditions:</label>
+            <select name="Weather_conditions" id="Weather_conditions" required>
+                <option value="">Select Weather Condition</option>
+                <option value="Fog">Fog</option>
+                <option value="Stormy">Stormy</option>
+                <option value="Sandstorms">Sandstorms</option>
+                <option value="Windy">Windy</option>
+                <option value="Cloudy">Cloudy</option>
+                <option value="Sunny">Sunny</option>
+            </select>
+            <span class="tooltiptext">Select Weather Conditions</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Road_traffic_density">Road_Traffic_Density:</label>
+            <select name="Road_traffic_density" id="Road_traffic_density" required>
+                <option value="">Select Traffic Density</option>
+                <option value="Jam">Jam</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <span class="tooltiptext">Select Road Traffic Density</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Vehicle_condition">Vehicle_condition:</label>
+            <input type="number" step="1" name="Vehicle_condition" id="Vehicle_condition" required>
+            <span class="tooltiptext">Enter either 0,1,2,3 for Vehicle Condition</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Type_of_order">Type of Order:</label>
+            <select name="Type_of_order" id="Type_of_order" required>
+                <option value="">Select Order Type</option>
+                <option value="Snack">Snack</option>
+                <option value="Meal">Meal</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Buffet">Buffet</option>
+            </select>
+            <span class="tooltiptext">Select Type of Order</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Type_of_vehicle">Type of Vehicle:</label>
+            <select name="Type_of_vehicle" id="Type_of_vehicle" required>
+                <option value="">Select Vehicle Type</option>
+                <option value="motorcycle">Motorcycle</option>
+                <option value="scooter">Scooter</option>
+                <option value="electric_scooter">Electric Scooter</option>
+                <option value="bicycle">Bicycle</option>
+            </select>
+            <span class="tooltiptext">Select Type of Vehicle</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="multiple_deliveries">Multiple Deliveries:</label>
+            <input type="number" step="1" name="multiple_deliveries" id="multiple_deliveries" required>
+            <span class="tooltiptext">ENter either 0,1,2,3 for Multiple Deliveries</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Festival">Festival:</label>
+            <select name="Festival" id="Festival" required>
+                <option value="">Select Festival</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+            <span class="tooltiptext">Select whether any Festival going on in city</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="City">City:</label>
+            <select name="City" id="City" required>
+                <option value="">Select City</option>
+                <option value="Metropolitian">Metropolitian</option>
+                <option value="Urban">Urban</option>
+                <option value="Semi-Urban">Semi-Urban</option>
+            </select>
+            <span class="tooltiptext">Select Kind of City</span>
+        </div>
+        
+        <div class="tooltip">
+            <label for="Distance_in_KM">Distance in KM:</label>
+            <input type="number" step="0.01" name="Distance_in_KM" id="Distance_in_KM" required>
+            <span class="tooltiptext">Enter the Distance in KM</span>
+        </div>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
